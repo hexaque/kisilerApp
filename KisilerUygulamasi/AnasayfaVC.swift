@@ -7,13 +7,24 @@
 
 import UIKit
 
-class AnasayfaVC: UIViewController {
+class AnasayfaVC: UIViewController,UISearchBarDelegate {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        searchBar.delegate = self  // yetkilendirme protokol ile bağlantı kuruldu
+        
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @IBAction func buttonDetay(_ sender: Any) {
         let kisi = Kisiler(kisi_id: 8, kisi_ad: "Ece", kisi_tel: "5530223944")
         
@@ -28,6 +39,18 @@ class AnasayfaVC: UIViewController {
             }
         }
     }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("Kişi ara : \(searchText)")
+    }
+    
+    
+    
+    
+    
+    
+    
     
     
 }

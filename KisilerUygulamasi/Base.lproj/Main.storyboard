@@ -24,12 +24,19 @@
                                     <action selector="buttonDetay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CE5-81-ZO4"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jAt-TE-Z1Y">
+                                <rect key="frame" x="0.0" y="148" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jAt-TE-Z1Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3ax-hN-H8T"/>
                             <constraint firstItem="68B-FE-DA4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NYV-OG-BRU"/>
+                            <constraint firstItem="jAt-TE-Z1Y" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Qag-nF-Gfi"/>
                             <constraint firstItem="68B-FE-DA4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fBL-GB-6lS"/>
+                            <constraint firstItem="jAt-TE-Z1Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wSJ-Ee-B6c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Kişiler" id="A3g-RU-TP6">
@@ -40,6 +47,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="jAt-TE-Z1Y" id="KXR-fB-mXi"/>
                         <segue destination="eQp-xw-bjT" kind="show" identifier="toDetay" id="fLh-aq-AgY"/>
                     </connections>
                 </viewController>
@@ -161,7 +169,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7aw-M3-BaX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="LXY-bG-O6J">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
