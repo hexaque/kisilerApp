@@ -90,7 +90,29 @@ extension AnasayfaVC : UITableViewDelegate,UITableViewDataSource{
         tableView.deselectRow(at: indexPath, animated: true) // animasyon
     }
     
-    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+       
+        
+        let silAction = UIContextualAction(style: .destructive, title: "sil"){(contextualAction ,view ,bool )in
+            let kisi = self.kisilerListe[indexPath.row]
+            
+            
+            let alert = UIAlertController(title: "Silme işlemi", message: "\(kisi.kisi_ad!) silinsin mi ?", preferredStyle: .alert)
+            let iptalAction = UIAlertAction(title: "İptal", style: .cancel)
+            alert.addAction(iptalAction)
+            let evetAction = UIAlertAction(title: "Evet", style: .destructive){
+                action in
+                print("kişi sil : \(kisi.kisi_id!)")
+                
+            }
+            alert.addAction(evetAction)
+            self.present(alert, animated: true)
+            
+            
+        }
+        
+        return UISwipeActionsConfiguration(actions: [silAction])
+    }
     
     
 }
