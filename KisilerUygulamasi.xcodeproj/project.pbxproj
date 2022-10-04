@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8220475F28EC98BD0001637D /* TableViewHucre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8220475E28EC98BD0001637D /* TableViewHucre.swift */; };
 		82F175B528EA132900D754DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F175B428EA132900D754DE /* AppDelegate.swift */; };
 		82F175B728EA132900D754DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F175B628EA132900D754DE /* SceneDelegate.swift */; };
 		82F175B928EA132900D754DE /* AnasayfaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F175B828EA132900D754DE /* AnasayfaVC.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8220475E28EC98BD0001637D /* TableViewHucre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHucre.swift; sourceTree = "<group>"; };
 		82F175B128EA132900D754DE /* KisilerUygulamasi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KisilerUygulamasi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F175B428EA132900D754DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82F175B628EA132900D754DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				82F175B828EA132900D754DE /* AnasayfaVC.swift */,
 				82F175CA28EA151D00D754DE /* KisiDetayVC.swift */,
 				82F175CC28EA1E7100D754DE /* Kisiler.swift */,
+				8220475E28EC98BD0001637D /* TableViewHucre.swift */,
 				82F175C828EA14FD00D754DE /* KisiKayitVC.swift */,
 				82F175BA28EA132900D754DE /* Main.storyboard */,
 				82F175BD28EA132B00D754DE /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 				82F175CB28EA151D00D754DE /* KisiDetayVC.swift in Sources */,
 				82F175B928EA132900D754DE /* AnasayfaVC.swift in Sources */,
 				82F175B528EA132900D754DE /* AppDelegate.swift in Sources */,
+				8220475F28EC98BD0001637D /* TableViewHucre.swift in Sources */,
 				82F175B728EA132900D754DE /* SceneDelegate.swift in Sources */,
 				82F175C928EA14FD00D754DE /* KisiKayitVC.swift in Sources */,
 				82F175CD28EA1E7100D754DE /* Kisiler.swift in Sources */,

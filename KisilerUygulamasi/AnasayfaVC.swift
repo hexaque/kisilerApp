@@ -7,13 +7,28 @@
 
 import UIKit
 
-class AnasayfaVC: UIViewController,UISearchBarDelegate {
+class AnasayfaVC: UIViewController {
 
+    @IBOutlet weak var kisilerTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    var kisilerListe = [Kisiler]()
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self  // yetkilendirme protokol ile bağlantı kuruldu
+        kisilerTableView.delegate = self
+        kisilerTableView.dataSource = self
         
+        
+        let k1 = Kisiler(kisi_id: 1, kisi_ad: "Ahmet", kisi_tel: "11111")
+        let k2 = Kisiler(kisi_id: 2, kisi_ad: "Ece", kisi_tel: "22222")
+        kisilerListe.append(k1)
+        kisilerListe.append(k2)
+
     }
 
     
@@ -25,11 +40,7 @@ class AnasayfaVC: UIViewController,UISearchBarDelegate {
     
     
     
-    @IBAction func buttonDetay(_ sender: Any) {
-        let kisi = Kisiler(kisi_id: 8, kisi_ad: "Ece", kisi_tel: "5530223944")
-        
-        performSegue(withIdentifier: "toDetay", sender: kisi)
-    }
+ /*
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetay"{
@@ -39,11 +50,9 @@ class AnasayfaVC: UIViewController,UISearchBarDelegate {
             }
         }
     }
+    */
     
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Kişi ara : \(searchText)")
-    }
+  
     
     
     
@@ -55,3 +64,27 @@ class AnasayfaVC: UIViewController,UISearchBarDelegate {
     
 }
 
+
+extension AnasayfaVC : UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("Kişi ara : \(searchText)")
+    }
+    
+}
+
+extension AnasayfaVC : UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return kisilerListe.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let kisi = kisilerListe[indexPath.row]
+        let hucre = tableView.dequeueReusableCell(withIdentifier: "kisilerHucre") as! TableViewHucre
+        hucre.kisiBilgiLabel.text = "\(kisi.kisi_ad!) - \(kisi.kisi_tel!)"
+        return hucre
+    }
+    
+    
+    
+    
+}
