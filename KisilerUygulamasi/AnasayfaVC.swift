@@ -40,7 +40,7 @@ class AnasayfaVC: UIViewController {
     
     
     
- /*
+ 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetay"{
@@ -50,7 +50,7 @@ class AnasayfaVC: UIViewController {
             }
         }
     }
-    */
+    
     
   
     
@@ -82,6 +82,12 @@ extension AnasayfaVC : UITableViewDelegate,UITableViewDataSource{
         let hucre = tableView.dequeueReusableCell(withIdentifier: "kisilerHucre") as! TableViewHucre
         hucre.kisiBilgiLabel.text = "\(kisi.kisi_ad!) - \(kisi.kisi_tel!)"
         return hucre
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let kisi = kisilerListe[indexPath.row]
+        performSegue(withIdentifier: "toDetay", sender: kisi)
+        print("\(kisi.kisi_ad!) seçildi")
+        tableView.deselectRow(at: indexPath, animated: true) // animasyon
     }
     
     
