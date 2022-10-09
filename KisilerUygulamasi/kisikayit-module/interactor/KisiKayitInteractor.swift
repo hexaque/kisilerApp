@@ -6,6 +6,8 @@
 //
 
 import Foundation
-class KisiKayitInteractor{
-    
+class KisiKayitInteractor:PresenterToInteractorKisiKayitProtocol{
+    func kisiEkle(kisi_ad: String, kisi_tel: String) {
+        print("Kişi Kayıt : \(kisi_ad) - \(kisi_tel)")
+    }
 }

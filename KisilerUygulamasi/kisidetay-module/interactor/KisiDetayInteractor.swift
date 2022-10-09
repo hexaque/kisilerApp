@@ -6,6 +6,11 @@
 //
 
 import Foundation
-class KisiDetayInteractor{
+
+class KisiDetayInteractor: PresenterToInteractorKisiDetayProtocol{
+    func kisiGuncelle(kisi_id: Int, kisi_ad: String, kisi_tel: String) {
+        print("KİŞİ GÜNCELLE \(kisi_id) - \(kisi_ad) - \(kisi_tel)")
+    }
+    
     
 }

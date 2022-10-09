@@ -16,9 +16,9 @@
 		8208568628F336BE00478652 /* KisiKayitRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8208568528F336BE00478652 /* KisiKayitRouter.swift */; };
 		8208568828F336D300478652 /* KisiKayitProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8208568728F336D300478652 /* KisiKayitProtocols.swift */; };
 		8208569028F3374500478652 /* KisiDetayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8208568F28F3374500478652 /* KisiDetayPresenter.swift */; };
-		8208569228F3375F00478652 /* KisiDetayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8208569128F3375F00478652 /* KisiDetayInteractor.swift */; };
 		8208569428F3377100478652 /* KisiDetayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8208569328F3377100478652 /* KisiDetayRouter.swift */; };
 		8208569628F3378500478652 /* KisiDetayProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8208569528F3378500478652 /* KisiDetayProtocols.swift */; };
+		8208569828F33B4000478652 /* KisiDetayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8208569728F33B4000478652 /* KisiDetayInteractor.swift */; };
 		8220475F28EC98BD0001637D /* TableViewHucre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8220475E28EC98BD0001637D /* TableViewHucre.swift */; };
 		82F175B528EA132900D754DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F175B428EA132900D754DE /* AppDelegate.swift */; };
 		82F175B728EA132900D754DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F175B628EA132900D754DE /* SceneDelegate.swift */; };
@@ -41,9 +41,9 @@
 		8208568528F336BE00478652 /* KisiKayitRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiKayitRouter.swift; sourceTree = "<group>"; };
 		8208568728F336D300478652 /* KisiKayitProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiKayitProtocols.swift; sourceTree = "<group>"; };
 		8208568F28F3374500478652 /* KisiDetayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiDetayPresenter.swift; sourceTree = "<group>"; };
-		8208569128F3375F00478652 /* KisiDetayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiDetayInteractor.swift; sourceTree = "<group>"; };
 		8208569328F3377100478652 /* KisiDetayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiDetayRouter.swift; sourceTree = "<group>"; };
 		8208569528F3378500478652 /* KisiDetayProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiDetayProtocols.swift; sourceTree = "<group>"; };
+		8208569728F33B4000478652 /* KisiDetayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiDetayInteractor.swift; sourceTree = "<group>"; };
 		8220475E28EC98BD0001637D /* TableViewHucre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHucre.swift; sourceTree = "<group>"; };
 		82F175B128EA132900D754DE /* KisilerUygulamasi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KisilerUygulamasi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F175B428EA132900D754DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 		8208568C28F3372700478652 /* interactor */ = {
 			isa = PBXGroup;
 			children = (
-				8208569128F3375F00478652 /* KisiDetayInteractor.swift */,
+				8208569728F33B4000478652 /* KisiDetayInteractor.swift */,
 			);
 			path = interactor;
 			sourceTree = "<group>";
@@ -348,7 +348,6 @@
 			files = (
 				8208568428F336AA00478652 /* KisiKayitInteractor.swift in Sources */,
 				8208568628F336BE00478652 /* KisiKayitRouter.swift in Sources */,
-				8208569228F3375F00478652 /* KisiDetayInteractor.swift in Sources */,
 				8208569028F3374500478652 /* KisiDetayPresenter.swift in Sources */,
 				8208567828F3332900478652 /* AnasayfaProtocols.swift in Sources */,
 				8208568228F3369800478652 /* KisiKayitPresenter.swift in Sources */,
@@ -360,6 +359,7 @@
 				8208567428F332FA00478652 /* AnasayfaInteractor.swift in Sources */,
 				8220475F28EC98BD0001637D /* TableViewHucre.swift in Sources */,
 				8208569428F3377100478652 /* KisiDetayRouter.swift in Sources */,
+				8208569828F33B4000478652 /* KisiDetayInteractor.swift in Sources */,
 				82F175B728EA132900D754DE /* SceneDelegate.swift in Sources */,
 				8208567628F3331300478652 /* AnasayfaRouter.swift in Sources */,
 				82F175C928EA14FD00D754DE /* KisiKayitVC.swift in Sources */,
