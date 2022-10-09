@@ -14,15 +14,17 @@ class AnasayfaVC: UIViewController {
     
     var kisilerListe = [Kisiler]()
     
-    
+    var anasayfaPresenterNesnesi : ViewToPresenterAnasayfaProtocol?
     
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         searchBar.delegate = self  // yetkilendirme protokol ile bağlantı kuruldu
         kisilerTableView.delegate = self
         kisilerTableView.dataSource = self
-        
+        AnasayfaRouter.createModule(ref: self)
         
         let k1 = Kisiler(kisi_id: 1, kisi_ad: "Ahmet", kisi_tel: "11111")
         let k2 = Kisiler(kisi_id: 2, kisi_ad: "Ece", kisi_tel: "22222")
@@ -31,6 +33,10 @@ class AnasayfaVC: UIViewController {
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        anasayfaPresenterNesnesi?.KisileriAl()
+        //anasayfadonulunca verileri alıcaz
+    }
     
     
     
@@ -63,11 +69,18 @@ class AnasayfaVC: UIViewController {
     
     
 }
-
+extension AnasayfaVC : PresenterToViewAnasayfaProtocol{
+    func vieweVeriGonder(kisilerListesi: [Kisiler]) {
+        self.kisilerListe = kisilerListesi
+        self.kisilerTableView.reloadData()
+    }
+    
+    
+}
 
 extension AnasayfaVC : UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Kişi ara : \(searchText)")
+        anasayfaPresenterNesnesi?.Ara(aramaKelimesi: searchText)
     }
     
 }
@@ -102,7 +115,7 @@ extension AnasayfaVC : UITableViewDelegate,UITableViewDataSource{
             alert.addAction(iptalAction)
             let evetAction = UIAlertAction(title: "Evet", style: .destructive){
                 action in
-                print("kişi sil : \(kisi.kisi_id!)")
+                self.anasayfaPresenterNesnesi?.Sil(kisi_id: kisi.kisi_id!)
                 
             }
             alert.addAction(evetAction)
