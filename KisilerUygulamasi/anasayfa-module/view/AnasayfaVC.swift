@@ -21,21 +21,24 @@ class AnasayfaVC: UIViewController {
         
         
         super.viewDidLoad()
+        veriTabaniKopyala()
+        
+        
         searchBar.delegate = self  // yetkilendirme protokol ile bağlantı kuruldu
         kisilerTableView.delegate = self
         kisilerTableView.dataSource = self
         AnasayfaRouter.createModule(ref: self)
         
-        let k1 = Kisiler(kisi_id: 1, kisi_ad: "Ahmet", kisi_tel: "11111")
+       /* let k1 = Kisiler(kisi_id: 1, kisi_ad: "Ahmet", kisi_tel: "11111")
         let k2 = Kisiler(kisi_id: 2, kisi_ad: "Ece", kisi_tel: "22222")
         kisilerListe.append(k1)
-        kisilerListe.append(k2)
+        kisilerListe.append(k2)*/
 
     }
 
     override func viewWillAppear(_ animated: Bool) {
         anasayfaPresenterNesnesi?.KisileriAl()
-        //anasayfadonulunca verileri alıcaz
+        //anasayfaya donulunce verileri alıcaz
     }
     
     
@@ -58,14 +61,27 @@ class AnasayfaVC: UIViewController {
     }
     
     
+    
+    
   
-    
-    
-    
-    
-    
-    
-    
+    func veriTabaniKopyala(){
+        let bundleYolu = Bundle.main.path(forResource: "rehber", ofType: ".sqlite")
+        let hedefYol = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let kopyalanacakYer = URL(fileURLWithPath: hedefYol).appendingPathComponent("rehber.sqlite")
+        let fileManager = FileManager.default
+        
+        if fileManager.fileExists(atPath: kopyalanacakYer.path){
+            print("Veritabanı Daha önce kopyalanmış.")
+        }else{
+            do{
+                try fileManager.copyItem(atPath: bundleYolu!, toPath: kopyalanacakYer.path)
+                
+            }catch{
+                print(error)
+            }
+        }
+        
+    }
     
     
 }
