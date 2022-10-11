@@ -8,7 +8,18 @@
 import Foundation
 class KisiKayitInteractor:PresenterToInteractorKisiKayitProtocol{
     func kisiEkle(kisi_ad: String, kisi_tel: String) {
-        print("Kişi Kayıt : \(kisi_ad) - \(kisi_tel)")
+        //print("Kişi Kayıt : \(kisi_ad) - \(kisi_tel)")
+        db?.open()
+        do{
+            try db!.executeUpdate("INSERT INTO kisiler (kisi_ad,kisi_tel) VALUES (?,?)", values: [kisi_ad,kisi_tel])
+            
+            }catch{
+            
+        
+            print(error.localizedDescription)
+        }
+        db?.close()
+        
     }
     let db:FMDatabase?
     
